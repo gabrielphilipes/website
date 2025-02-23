@@ -202,7 +202,7 @@ const sonAge = (): number => {
         </div>
 
         <footer
-          class="flex justify-between items-center text-xs text-zinc-400 px-5 my-10"
+          class="flex flex-col gap-2 md:flex-row md:gap-0 justify-between items-center text-xs text-zinc-400 px-5 my-10"
         >
           <p>
             &copy; {{ new Date().getFullYear() }} Gabriel Philipe Silva. Todos
