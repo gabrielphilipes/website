@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-serif {
+  font-family: "Newsreader", serif;
+}
+
+.ph_transition {
+  @apply transition-all duration-300;
+}
