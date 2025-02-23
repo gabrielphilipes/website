@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
   future: { compatibilityVersion: 4 },
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts", "@nuxt/icon"],
   srcDir: "app",
   serverDir: "server",
   css: ["~/assets/css/general.css"],
@@ -12,6 +12,7 @@ export default defineNuxtConfig({
   googleFonts: {
     families: {
       Newsreader: [200, 300, 400, 500, 600, 700, 800],
+      "Nunito+Sans": [200, 300, 400, 500, 600, 700, 800],
     },
   },
 });

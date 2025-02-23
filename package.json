@@ -12,6 +12,7 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
+    "@nuxt/icon": "1.10.3",
     "@nuxthub/core": "^0.8.17",
     "@nuxtjs/google-fonts": "3.2.0",
     "@nuxtjs/tailwindcss": "6.13.1",

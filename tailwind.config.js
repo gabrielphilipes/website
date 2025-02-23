@@ -2,8 +2,12 @@
 export default {
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Nunito Sans", "sans-serif"],
+        serif: ["Newsreader", "serif"],
+      },
+    },
   },
   plugins: [],
-}
-
+};
