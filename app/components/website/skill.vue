@@ -4,6 +4,8 @@ defineProps<{
   level: string;
   description?: string;
 }>();
+
+const isOpen = ref<boolean>(false);
 </script>
 
 <template>
@@ -16,8 +18,22 @@ defineProps<{
       {{ level }}
     </span>
 
-    <p v-if="description" class="w-full text-sm text-zinc-400">
+    <p v-if="description && isOpen" class="w-full text-sm text-zinc-400">
       {{ description }}
     </p>
+
+    <span
+      v-if="description"
+      @click="isOpen = !isOpen"
+      class="flex items-center gap-1 w-full cursor-pointer text-sm text-zinc-400 hover:text-zinc-600 ph_transition"
+      :class="{ 'text-zinc-600 mt-2': isOpen }"
+    >
+      {{ isOpen ? "Ocultar descrição" : "Ver mais" }}
+      <Icon
+        name="heroicons:chevron-down"
+        size="13"
+        :class="{ 'rotate-180 ph_transition': isOpen }"
+      />
+    </span>
   </li>
 </template>

@@ -14,7 +14,7 @@ defineProps<{
         :src="image"
         :alt="title"
         :title="title"
-        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 ph_transition"
+        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 ph_transition"
       />
     </a>
 

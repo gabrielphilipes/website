@@ -198,6 +198,31 @@ const sonAge = (): number => {
             </section>
 
             <span class="divider" />
+
+            <section>
+              <h1 class="section-title">Sobre mim</h1>
+
+              <div class="flex flex-col gap-4 font-sm text-zinc-500">
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Delectus reiciendis molestiae velit iure blanditiis voluptate
+                  dolorum adipisci est rerum amet ipsam distinctio, omnis,
+                  labore ad minus voluptatibus architecto tempore commodi!
+                </p>
+
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Delectus reiciendis molestiae velit iure blanditiis voluptate
+                  dolorum adipisci est rerum amet ipsam distinctio, omnis,
+                  labore ad minus voluptatibus architecto tempore commodi!
+                </p>
+
+                <p>
+                  <span class="font-medium">Posso te ajudar?</span>
+                  Entre em contato e vamos conversar 😄🔥🚀
+                </p>
+              </div>
+            </section>
           </div>
         </div>
 
