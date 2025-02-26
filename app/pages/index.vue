@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { WebsiteProjectCard } from "#components";
+import Chatmix from "~/components/website/Portfolio/Chatmix.vue";
+import type { WebsiteProject } from "~/types/website";
 
 const projects = [
   {
     id: 1,
     title: "Titulo",
     description: "Descrição",
+    component: Chatmix,
     image: "https://placehold.co/600x400",
     views: 100,
   },
@@ -13,6 +16,7 @@ const projects = [
     id: 2,
     title: "Titulo",
     description: "Descrição",
+    component: Chatmix,
     image: "https://placehold.co/600x400",
     views: 100,
   },
@@ -73,6 +77,13 @@ const sonAge = (): number => {
   const age = today.getFullYear() - sonBirthday.getFullYear();
   return age;
 };
+
+const modal = ref<boolean>(false);
+const selectedProject = ref<WebsiteProject | null>(null);
+const openModal = (project: WebsiteProject) => {
+  modal.value = true;
+  selectedProject.value = project;
+};
 </script>
 
 <template>
@@ -89,7 +100,7 @@ const sonAge = (): number => {
       <aside
         class="w-11/12 mx-auto md:w-1/3 md:mx-0 px-4 md:pl-6 md:pr-10 mt-10 relative"
       >
-        <header class="flex flex-col items-center md:items-start sticky top-0">
+        <header class="flex flex-col items-center md:items-start sticky top-4">
           <img
             src="https://placehold.co/600x600"
             alt="Portfólio"
@@ -145,6 +156,7 @@ const sonAge = (): number => {
               <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <WebsiteProjectCard
                   v-for="project in projects"
+                  @click="openModal(project)"
                   :key="project.id"
                   :title="project.title"
                   :description="project.description"
@@ -152,6 +164,21 @@ const sonAge = (): number => {
                   :views="project.views"
                 />
               </div>
+
+              <UModal
+                :ui="{ content: '!w-full !max-w-screen-lg' }"
+                v-model:open="modal"
+                :title="selectedProject?.title"
+              >
+                <template #body>
+                  <WebsiteModalLayout>
+                    <component
+                      :is="selectedProject?.component"
+                      :project="selectedProject"
+                    />
+                  </WebsiteModalLayout>
+                </template>
+              </UModal>
 
               <span class="text-xs text-zinc-400 italic block mt-5">
                 * Existem, ainda, projetos que não podem ser divulgados por
