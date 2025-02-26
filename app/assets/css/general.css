@@ -1,6 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme" layer(theme) theme(static);
+@import "tailwindcss/preflight" layer(base);
+@import "tailwindcss/utilities" layer(utilities);
+
+/* Then import "@nuxt/ui": */
+@import "@nuxt/ui";
 
 body {
   @apply font-sans;

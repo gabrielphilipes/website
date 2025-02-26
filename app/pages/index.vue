@@ -248,6 +248,8 @@ const sonAge = (): number => {
 </template>
 
 <style scoped>
+@reference "../assets/css/general.css";
+
 .section-title {
   @apply text-xl font-medium font-serif block mb-4;
 }
