@@ -25,14 +25,14 @@ defineProps<{
         </a>
 
         <p
-          class="text-xs text-zinc-400 group-hover:text-zinc-500 ph_transition"
+          class="text-xs text-zinc-400 group-hover:text-zinc-500 dark:group-hover:text-zinc-300 ph_transition"
         >
           {{ description }}
         </p>
       </header>
 
       <span
-        class="flex items-center gap-1 text-xs text-zinc-400 group-hover:text-zinc-500 ph_transition"
+        class="flex items-center gap-1 text-xs text-zinc-400 group-hover:text-zinc-500 dark:group-hover:text-zinc-300 ph_transition"
       >
         <Icon name="mdi:eye" class="size-4" /> {{ views }} visualizações
       </span>

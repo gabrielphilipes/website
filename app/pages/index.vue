@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { WebsiteProjectCard } from "#components";
 import Chatmix from "~/components/website/Portfolio/Chatmix.vue";
 import type { WebsiteProject } from "~/types/website";
 
@@ -74,8 +73,7 @@ const contacts = [
 const sonAge = (): number => {
   const sonBirthday = new Date("2023-05-08");
   const today = new Date();
-  const age = today.getFullYear() - sonBirthday.getFullYear();
-  return age;
+  return today.getFullYear() - sonBirthday.getFullYear();
 };
 
 const modal = ref<boolean>(false);
@@ -84,6 +82,18 @@ const openModal = (project: WebsiteProject) => {
   modal.value = true;
   selectedProject.value = project;
 };
+
+// Dark mode
+const colorMode = useColorMode();
+
+const isDark = computed({
+  get() {
+    return colorMode.value === "dark";
+  },
+  set() {
+    colorMode.preference = colorMode.value === "dark" ? "light" : "dark";
+  },
+});
 </script>
 
 <template>
@@ -107,7 +117,7 @@ const openModal = (project: WebsiteProject) => {
             class="size-40 rounded-full mx-auto md:mx-0"
           />
 
-          <h1 class="text-3xl font-medium font-serif mt-4">
+          <h1 class="text-3xl font-medium font-serif mt-4 dark:text-zinc-100">
             Gabriel Philipe Silva
           </h1>
 
@@ -119,7 +129,9 @@ const openModal = (project: WebsiteProject) => {
             <WebsiteBadge text="Empreendedor" />
           </div>
 
-          <div class="flex flex-col gap-3 mt-10 text-zinc-500">
+          <div
+            class="flex flex-col gap-3 mt-10 text-zinc-500 dark:text-zinc-400"
+          >
             <p>Transformo ideias em código e negócios digitais!</p>
             <p>
               Sempre atento às tendências de tecnologia, negócios e inovação.
@@ -135,7 +147,7 @@ const openModal = (project: WebsiteProject) => {
               <li v-for="contact in contacts" :key="contact.id">
                 <a
                   :href="contact.link"
-                  class="flex items-center gap-2 hover:text-zinc-700"
+                  class="flex items-center gap-2 dark:text-zinc-400 hover:text-primary-500"
                   target="_blank"
                 >
                   <Icon :name="contact.icon" class="size-5" />
@@ -148,7 +160,9 @@ const openModal = (project: WebsiteProject) => {
       </aside>
 
       <div class="flex-1 flex flex-col mt-10 md:my-10">
-        <div class="bg-zinc-100 py-10 md:py-5 md:rounded-l-lg xl:rounded-lg">
+        <div
+          class="bg-zinc-100 dark:bg-zinc-800 py-10 md:py-5 md:rounded-l-lg xl:rounded-lg"
+        >
           <div class="flex flex-col gap-4 w-11/12 mx-auto">
             <section>
               <h1 class="section-title">Portfólio</h1>
@@ -229,7 +243,9 @@ const openModal = (project: WebsiteProject) => {
             <section>
               <h1 class="section-title">Sobre mim</h1>
 
-              <div class="flex flex-col gap-4 font-sm text-zinc-500">
+              <div
+                class="flex flex-col gap-4 font-sm text-zinc-500 dark:text-zinc-400"
+              >
                 <p>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Delectus reiciendis molestiae velit iure blanditiis voluptate
@@ -256,18 +272,33 @@ const openModal = (project: WebsiteProject) => {
         <footer
           class="flex flex-col gap-2 md:flex-row md:gap-0 justify-between items-center text-xs text-zinc-400 px-5 my-10"
         >
-          <p>
-            &copy; {{ new Date().getFullYear() }} Gabriel Philipe Silva. Todos
-            os direitos reservados.
-          </p>
+          <div class="flex flex-col gap-2">
+            <p>
+              &copy; {{ new Date().getFullYear() }} Gabriel Philipe Silva. Todos
+              os direitos reservados.
+            </p>
 
-          <a
-            href="https://github.com/gabrielphilipes/website"
-            target="_blank"
-            class="hover:text-zinc-500"
-          >
-            Código deste site :-)
-          </a>
+            <a
+              href="https://github.com/gabrielphilipes/website"
+              target="_blank"
+              class="hover:text-primary-500"
+            >
+              Código deste site :-)
+            </a>
+          </div>
+
+          <USwitch
+            unchecked-icon="i-lucide-moon"
+            checked-icon="i-lucide-sun"
+            :default-value="isDark"
+            :label="isDark ? 'Modo escuro' : 'Modo claro'"
+            size="sm"
+            @update:model-value="isDark = !isDark"
+            :ui="{
+              label: 'text-xs text-zinc-400 cursor-pointer',
+              button: 'cursor-pointer',
+            }"
+          />
         </footer>
       </div>
     </main>
@@ -278,10 +309,10 @@ const openModal = (project: WebsiteProject) => {
 @reference "../assets/css/general.css";
 
 .section-title {
-  @apply text-xl font-medium font-serif block mb-4;
+  @apply text-xl font-medium font-serif block mb-4 dark:text-white;
 }
 
 .divider {
-  @apply w-full pt-10 mt-10 border-t border-zinc-200;
+  @apply w-full pt-10 mt-10 border-t border-zinc-200 dark:border-zinc-700;
 }
 </style>
