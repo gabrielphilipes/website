@@ -5,11 +5,5 @@ export default defineAppConfig({
       primary: "emerald",
       neutral: "zinc",
     },
-    button: {
-      defaultVariants: {
-        // Set default button color to neutral
-        // color: 'neutral'
-      },
-    },
   },
 });

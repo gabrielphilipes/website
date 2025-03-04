@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Chatmix from "~/components/website/Portfolio/Chatmix.vue";
-import type { WebsiteProject } from "~/types/website";
+import type { WebsiteProjectType } from "~/types/website";
 
 const projects = [
   {
@@ -21,49 +21,18 @@ const projects = [
   },
 ];
 
-const skills = [
-  {
-    id: 1,
-    name: "HTML",
-    description: "Descrição",
-    level: "Avançado",
-  },
-  {
-    id: 2,
-    name: "CSS",
-    level: "Avançado",
-  },
-];
-
-const courses = [
-  {
-    id: 1,
-    name: "Graduação XPTO",
-    level: "Concluído",
-  },
-  {
-    id: 2,
-    name: "Curso XPTO",
-    description: "Descrição",
-    level: "Concluído",
-  },
-];
-
 const contacts = [
   {
-    id: 1,
     name: "LinkedIn",
     icon: "mdi:linkedin",
     link: "https://www.linkedin.com/in/gabrielphilipes/",
   },
   {
-    id: 2,
     name: "E-mail",
     icon: "mdi:email",
     link: "mailto:gabriel@philipe.dev",
   },
   {
-    id: 3,
     name: "WhatsApp",
     icon: "mdi:whatsapp",
     link: "https://wa.me/5537991944989",
@@ -71,28 +40,27 @@ const contacts = [
 ];
 
 const sonAge = (): number => {
-  const sonBirthday = new Date("2023-05-08");
+  const sonBirthday = new Date("2022-05-08");
   const today = new Date();
-  return today.getFullYear() - sonBirthday.getFullYear();
+
+  const diffInMilliseconds = today.getTime() - sonBirthday.getTime();
+
+  const diffInDays = diffInMilliseconds / (1000 * 60 * 60 * 24);
+  return Math.floor(diffInDays / 365);
 };
 
 const modal = ref<boolean>(false);
-const selectedProject = ref<WebsiteProject | null>(null);
-const openModal = (project: WebsiteProject) => {
+const selectedProject = ref<WebsiteProjectType | null>(null);
+const openModal = (project: WebsiteProjectType) => {
   modal.value = true;
   selectedProject.value = project;
 };
 
 // Dark mode
 const colorMode = useColorMode();
-
-const isDark = computed({
-  get() {
-    return colorMode.value === "dark";
-  },
-  set() {
-    colorMode.preference = colorMode.value === "dark" ? "light" : "dark";
-  },
+const isDark = ref<boolean>(colorMode.preference === "dark");
+watch(colorMode, () => {
+  isDark.value = colorMode.preference === "dark";
 });
 </script>
 
@@ -135,26 +103,29 @@ const isDark = computed({
             <p>Transformo ideias em código e negócios digitais!</p>
             <p>
               Sempre atento às tendências de tecnologia, negócios e inovação.
-              Além do código, exploro sobre design, carros e brincar com meu
-              filho (Danilo, {{ sonAge() }} anos).
+              Além do código, exploro sobre design, carros e, ainda, passo
+              bastante tempo brincando com meu filho (Danilo,
+              {{ sonAge() }} anos).
             </p>
           </div>
 
           <div class="mt-10">
             <h2 class="section-title">Contato</h2>
 
-            <ul class="flex flex-col gap-2 text-sm text-zinc-500">
-              <li v-for="contact in contacts" :key="contact.id">
-                <a
-                  :href="contact.link"
-                  class="flex items-center gap-2 dark:text-zinc-400 hover:text-primary-500"
-                  target="_blank"
-                >
-                  <Icon :name="contact.icon" class="size-5" />
-                  <span>{{ contact.name }}</span>
-                </a>
-              </li>
-            </ul>
+            <nav class="flex flex-col -ml-2">
+              <UButton
+                v-for="contact in contacts"
+                :key="contact.name"
+                variant="link"
+                color="neutral"
+                :href="contact.link"
+                target="_blank"
+                class="hover:text-primary-500"
+              >
+                <Icon :name="contact.icon" class="size-5" />
+                <span>{{ contact.name }}</span>
+              </UButton>
+            </nav>
           </div>
         </header>
       </aside>
@@ -164,6 +135,57 @@ const isDark = computed({
           class="bg-zinc-100 dark:bg-zinc-800 py-10 md:py-5 md:rounded-l-lg xl:rounded-lg"
         >
           <div class="flex flex-col gap-4 w-11/12 mx-auto">
+            <section>
+              <h1 class="section-title">Sobre mim</h1>
+
+              <div
+                class="flex flex-col gap-4 font-sm text-zinc-500 dark:text-zinc-400"
+              >
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Delectus reiciendis molestiae velit iure blanditiis voluptate
+                  dolorum adipisci est rerum amet ipsam distinctio, omnis,
+                  labore ad minus voluptatibus architecto tempore commodi!
+                </p>
+
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Delectus reiciendis molestiae velit iure blanditiis voluptate
+                  dolorum adipisci est rerum amet ipsam distinctio, omnis,
+                  labore ad minus voluptatibus architecto tempore commodi!
+                </p>
+
+                <p>
+                  <span class="font-medium">Posso te ajudar?</span>
+                  Entre em contato e vamos conversar 😄🔥🚀
+                </p>
+              </div>
+            </section>
+
+            <span class="divider" />
+
+            <section>
+              <h1 class="section-title">Conhecimentos</h1>
+
+              <div class="grid grid-cols-1 gap-6 lg:grid-cols-10">
+                <section class="col-span-10 lg:col-span-6">
+                  <h2 class="text-lg font-medium font-serif mb-4">
+                    Desenvolvimento
+                  </h2>
+
+                  <WebsiteHardSkillBlock />
+                </section>
+
+                <article class="col-span-10 lg:col-span-4">
+                  <h2 class="text-lg font-medium font-serif mb-4">Cursos</h2>
+
+                  <WebsiteCourses />
+                </article>
+              </div>
+            </section>
+
+            <span class="divider" />
+
             <section>
               <h1 class="section-title">Portfólio</h1>
 
@@ -199,78 +221,11 @@ const isDark = computed({
                 força de contrato.
               </span>
             </section>
-
-            <span class="divider" />
-
-            <section>
-              <h1 class="section-title">Conhecimentos</h1>
-
-              <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <article>
-                  <h2 class="text-lg font-medium font-serif mb-4">
-                    Stack de Desenvolvimento
-                  </h2>
-
-                  <ul class="flex flex-wrap gap-2">
-                    <WebsiteSkill
-                      v-for="skill in skills"
-                      :key="skill.id"
-                      :name="skill.name"
-                      :description="skill.description"
-                      :level="skill.level"
-                    />
-                  </ul>
-                </article>
-
-                <article>
-                  <h2 class="text-lg font-medium font-serif mb-4">Cursos</h2>
-
-                  <ul class="flex flex-wrap gap-2">
-                    <WebsiteSkill
-                      v-for="course in courses"
-                      :key="course.id"
-                      :name="course.name"
-                      :description="course.description"
-                      :level="course.level"
-                    />
-                  </ul>
-                </article>
-              </div>
-            </section>
-
-            <span class="divider" />
-
-            <section>
-              <h1 class="section-title">Sobre mim</h1>
-
-              <div
-                class="flex flex-col gap-4 font-sm text-zinc-500 dark:text-zinc-400"
-              >
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Delectus reiciendis molestiae velit iure blanditiis voluptate
-                  dolorum adipisci est rerum amet ipsam distinctio, omnis,
-                  labore ad minus voluptatibus architecto tempore commodi!
-                </p>
-
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Delectus reiciendis molestiae velit iure blanditiis voluptate
-                  dolorum adipisci est rerum amet ipsam distinctio, omnis,
-                  labore ad minus voluptatibus architecto tempore commodi!
-                </p>
-
-                <p>
-                  <span class="font-medium">Posso te ajudar?</span>
-                  Entre em contato e vamos conversar 😄🔥🚀
-                </p>
-              </div>
-            </section>
           </div>
         </div>
 
         <footer
-          class="flex flex-col gap-2 md:flex-row md:gap-0 justify-between items-center text-xs text-zinc-400 px-5 my-10"
+          class="flex flex-col gap-2 md:flex-row md:gap-0 justify-between items-center text-xs text-zinc-400 pr-5 xl:pr-0 my-10"
         >
           <div class="flex flex-col gap-2">
             <p>
@@ -278,25 +233,29 @@ const isDark = computed({
               os direitos reservados.
             </p>
 
-            <a
+            <UButton
+              size="sm"
+              variant="link"
+              color="neutral"
               href="https://github.com/gabrielphilipes/website"
               target="_blank"
-              class="hover:text-primary-500"
+              class="-ml-2"
             >
               Código deste site :-)
-            </a>
+            </UButton>
           </div>
 
           <USwitch
             unchecked-icon="i-lucide-moon"
             checked-icon="i-lucide-sun"
-            :default-value="isDark"
+            v-model="isDark"
             :label="isDark ? 'Modo escuro' : 'Modo claro'"
             size="sm"
-            @update:model-value="isDark = !isDark"
+            @update:model-value="
+              colorMode.preference = isDark ? 'dark' : 'light'
+            "
             :ui="{
               label: 'text-xs text-zinc-400 cursor-pointer',
-              button: 'cursor-pointer',
             }"
           />
         </footer>

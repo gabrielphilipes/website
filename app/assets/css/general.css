@@ -18,3 +18,7 @@ textarea,
 .ph_transition {
   @apply transition-all duration-300;
 }
+
+mark {
+  @apply bg-primary-500 text-white px-1.5 rounded-lg text-sm font-medium;
+}
