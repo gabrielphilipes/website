@@ -4,15 +4,45 @@ import type { WebsiteHardSkillType } from "~~/types/website";
 const backEndSkills: WebsiteHardSkillType[] = [
   {
     id: 1,
-    name: "PHP Legado",
+    name: "PHP legado",
     level: "Avançado",
+  },
+  {
+    id: 2,
+    name: "Laravel",
+    level: "Avançado",
+  },
+  {
+    id: 3,
+    name: "Swoole",
+    level: "Intermediário",
+  },
+  {
+    id: 4,
+    name: "Node.js",
+    level: "Iniciante",
   },
 ];
 
 const frontEndSkills: WebsiteHardSkillType[] = [
   {
     id: 1,
-    name: "PHP Legado",
+    name: "Vue.JS",
+    level: "Avançado",
+  },
+  {
+    id: 2,
+    name: "Nuxt (Full Stack)",
+    level: "Intermediário",
+  },
+  {
+    id: 3,
+    name: "JavaScript ES6+",
+    level: "Intermediário",
+  },
+  {
+    id: 4,
+    name: "TailwindCSS",
     level: "Avançado",
   },
 ];
@@ -20,16 +50,51 @@ const frontEndSkills: WebsiteHardSkillType[] = [
 const databaseSkills: WebsiteHardSkillType[] = [
   {
     id: 1,
-    name: "MySQL",
+    name: "MySQL / MariaDB",
     level: "Avançado",
+  },
+  {
+    id: 2,
+    name: "PostgreSQL",
+    level: "Intermediário",
+  },
+  {
+    id: 3,
+    name: "Redis",
+    level: "Intermediário",
   },
 ];
 
 const toolsSkills: WebsiteHardSkillType[] = [
   {
     id: 1,
-    name: "PHP Legado",
-    level: "Avançado",
+    name: "Docker",
+    level: "Intermediário",
+  },
+  {
+    id: 2,
+    name: "WebSockets",
+    level: "Intermediário",
+  },
+  {
+    id: 3,
+    name: "S3",
+    level: "Intermediário",
+  },
+  {
+    id: 4,
+    name: "CI/CD Pipelines",
+    level: "Intermediário",
+  },
+  {
+    id: 5,
+    name: "aaPanel",
+    level: "Intermediário",
+  },
+  {
+    id: 6,
+    name: "Nginx",
+    level: "Intermediário",
   },
 ];
 </script>
@@ -39,7 +104,7 @@ const toolsSkills: WebsiteHardSkillType[] = [
     <article class="flex flex-col gap-2">
       <h3 class="font-medium font-serif">Back-end</h3>
 
-      <ul class="text-sm text-zinc-500">
+      <ul class="flex flex-col gap-2 text-sm text-zinc-500">
         <WebsiteHardSkillItem
           v-for="skill in backEndSkills"
           :key="skill.id"
@@ -52,7 +117,7 @@ const toolsSkills: WebsiteHardSkillType[] = [
     <article class="flex flex-col gap-2">
       <h3 class="font-medium font-serif">Front-end</h3>
 
-      <ul class="text-sm text-zinc-500">
+      <ul class="flex flex-col gap-2 text-sm text-zinc-500">
         <WebsiteHardSkillItem
           v-for="skill in frontEndSkills"
           :key="skill.id"
@@ -65,9 +130,9 @@ const toolsSkills: WebsiteHardSkillType[] = [
     <article class="flex flex-col gap-2">
       <h3 class="font-medium font-serif">Banco de Dados</h3>
 
-      <ul class="text-sm text-zinc-500">
+      <ul class="flex flex-col gap-2 text-sm text-zinc-500">
         <WebsiteHardSkillItem
-          v-for="skill in frontEndSkills"
+          v-for="skill in databaseSkills"
           :key="skill.id"
           :name="skill.name"
           :level="skill.level"
@@ -76,16 +141,17 @@ const toolsSkills: WebsiteHardSkillType[] = [
     </article>
 
     <article class="flex flex-col gap-2">
-      <h3 class="font-medium font-serif">Ferramentas</h3>
+      <h3 class="font-medium font-serif">Ferramentas Gerais</h3>
 
-      <ul class="text-sm text-zinc-500">
-        <WebsiteHardSkillItem
-          v-for="skill in frontEndSkills"
+      <div class="flex flex-wrap space-x-4 text-sm text-zinc-500">
+        <span
+          v-for="skill in toolsSkills"
           :key="skill.id"
-          :name="skill.name"
-          :level="skill.level"
-        />
-      </ul>
+          class="flex items-center gap-2"
+        >
+          • {{ skill.name }}
+        </span>
+      </div>
     </article>
   </div>
 </template>

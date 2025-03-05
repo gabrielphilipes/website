@@ -9,20 +9,20 @@ defineProps<{
 
 <template>
   <article class="flex flex-col gap-4 group">
-    <a href="#" class="rounded-lg overflow-hidden">
+    <ULink href="#" class="rounded-lg overflow-hidden">
       <img
         :src="image"
         :alt="title"
         :title="title"
         class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 ph_transition"
       />
-    </a>
+    </ULink>
 
     <div class="flex justify-between items-center">
       <header>
-        <a href="#" class="rounded-lg overflow-hidden">
-          <h2 class="font-medium font-serif">{{ title }}</h2>
-        </a>
+        <ULink href="#" class="rounded-lg overflow-hidden">
+          <h2 class="font-medium font-serif">{{ title.trim() }}</h2>
+        </ULink>
 
         <p
           class="text-xs text-zinc-400 group-hover:text-zinc-500 dark:group-hover:text-zinc-300 ph_transition"

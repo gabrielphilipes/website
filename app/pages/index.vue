@@ -81,7 +81,7 @@ watch(colorMode, () => {
         <header class="flex flex-col items-center md:items-start sticky top-4">
           <img
             src="https://placehold.co/600x600"
-            alt="Portfólio"
+            alt="Gabriel Philipe Silva"
             class="size-40 rounded-full mx-auto md:mx-0"
           />
 
@@ -168,7 +168,9 @@ watch(colorMode, () => {
               <h1 class="section-title">Conhecimentos</h1>
 
               <div class="grid grid-cols-1 gap-6 lg:grid-cols-10">
-                <section class="col-span-10 lg:col-span-6">
+                <section
+                  class="col-span-10 lg:col-span-6 lg:border-r border-zinc-200 dark:border-zinc-700 pr-5"
+                >
                   <h2 class="text-lg font-medium font-serif mb-4">
                     Desenvolvimento
                   </h2>

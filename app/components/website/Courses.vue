@@ -8,12 +8,27 @@ interface WebsiteCourseType {
 const courses: WebsiteCourseType[] = [
   {
     id: 1,
-    name: "Curso de PHP",
+    name: "Graduação em Marketing",
     status: "finished",
   },
   {
     id: 2,
+    name: "Product Management (PM3)",
+    status: "finished",
+  },
+  {
+    id: 3,
     name: "MBA em Gestão da Tecnologia, IA e Desenvolvimento Empresarial",
+    status: "in-progress",
+  },
+  {
+    id: 4,
+    name: "Curso.dev",
+    status: "in-progress",
+  },
+  {
+    id: 5,
+    name: "G4 Skills",
     status: "in-progress",
   },
 ];
