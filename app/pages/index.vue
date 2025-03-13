@@ -143,37 +143,36 @@ watch(colorMode, () => {
               >
                 <p>
                   Meu primeiro contato com código foi aos 14 anos, e desde
-                  então, nunca parei de estudar e aprimorar minhas habilidades.
-                  No início da carreira, atuei em áreas administrativas,
-                  passando por uma Associação Empresarial e pelo Sicoob,
-                  enquanto desenvolvia sites institucionais, sistemas internos e
-                  realizava manutenções em plataformas SaaS. A decisão de seguir
-                  na programação veio quando recebi um convite para empreender
-                  em um SaaS, e optei por mergulhar de vez no mundo da
-                  tecnologia.
+                  então, nunca dexei tecnologia de lado. Durante minha
+                  trajetória, atuei em áreas administrativas enquanto, como
+                  freela, desenvolvia sites institucionais e sistemas internos,
+                  até que decidi seguir de vez na programação, co-fundando um
+                  SaaS.
                 </p>
 
                 <p>
-                  Empreendendo por quatro anos, construí do zero um sistema de
-                  chatbot voltado para provedores de internet, que escalou para
-                  mais de 1.400 empresas e 5.000 usuários ativos, trocando quase
-                  750 mil mensagens diariamente. Liderando a parte técnica com
-                  uma equipe de X pessoas, aprofundei-me em Laravel e seu
-                  ecossistema, Vue.js, WebSockets, Swoole, filas e gestão de
-                  servidores. Durante essa jornada, também adquiri experiência
-                  em gestão de pessoas, processos operacionais, suporte ao
-                  cliente, marketing e vendas. Após essa intensa trajetória
-                  empreendedora, tomei outra grande decisão: deixar a empresa
-                  que ajudei a construir para explorar novas oportunidades
-                  profissionais.
+                  Foram quatro anos empreendendo e construindo do zero um
+                  sistema de chatbot, com foco em provedores de internet,
+                  atendendo mais de 1.400 empresas e 5.000 usuários ativos, com
+                  quase 750 mil mensagens trocadas diariamente. Como líder
+                  técnico, trabalhei com Laravel, Vue.js, WebSockets, Swoole,
+                  filas e gestão de servidores, além de adquirir grande
+                  experiência em gestão de equipes, processos, suporte ao
+                  cliente, marketing e vendas.
+                </p>
+
+                <p>
+                  Após uma intensa jornada, tomei outra grande decisão: deixar a
+                  empresa que ajudei a construir para explorar novas
+                  oportunidades profissionais, ajudando a criar novos negócios!
                 </p>
 
                 <p>
                   <span class="font-medium">
-                    Posso te ajudar no seu projeto?
+                    Posso ajudar no seu projeto?
                   </span>
 
-                  Entre em contato e vamos conversar! 😄🔥🚀
+                  Entre em contato, vamos conversar! 😄🔥🚀
                 </p>
               </div>
             </section>
