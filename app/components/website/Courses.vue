@@ -18,16 +18,21 @@ const courses: WebsiteCourseType[] = [
   },
   {
     id: 3,
+    name: "Comunidade Micro-SaaS Pro",
+    status: "finished",
+  },
+  {
+    id: 4,
     name: "MBA em Gestão da Tecnologia, IA e Desenvolvimento Empresarial",
     status: "in-progress",
   },
   {
-    id: 4,
+    id: 5,
     name: "Curso.dev",
     status: "in-progress",
   },
   {
-    id: 5,
+    id: 6,
     name: "G4 Skills",
     status: "in-progress",
   },

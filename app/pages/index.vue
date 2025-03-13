@@ -142,22 +142,38 @@ watch(colorMode, () => {
                 class="flex flex-col gap-4 font-sm text-zinc-500 dark:text-zinc-400"
               >
                 <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Delectus reiciendis molestiae velit iure blanditiis voluptate
-                  dolorum adipisci est rerum amet ipsam distinctio, omnis,
-                  labore ad minus voluptatibus architecto tempore commodi!
+                  Meu primeiro contato com código foi aos 14 anos, e desde
+                  então, nunca parei de estudar e aprimorar minhas habilidades.
+                  No início da carreira, atuei em áreas administrativas,
+                  passando por uma Associação Empresarial e pelo Sicoob,
+                  enquanto desenvolvia sites institucionais, sistemas internos e
+                  realizava manutenções em plataformas SaaS. A decisão de seguir
+                  na programação veio quando recebi um convite para empreender
+                  em um SaaS, e optei por mergulhar de vez no mundo da
+                  tecnologia.
                 </p>
 
                 <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Delectus reiciendis molestiae velit iure blanditiis voluptate
-                  dolorum adipisci est rerum amet ipsam distinctio, omnis,
-                  labore ad minus voluptatibus architecto tempore commodi!
+                  Empreendendo por quatro anos, construí do zero um sistema de
+                  chatbot voltado para provedores de internet, que escalou para
+                  mais de 1.400 empresas e 5.000 usuários ativos, trocando quase
+                  750 mil mensagens diariamente. Liderando a parte técnica com
+                  uma equipe de X pessoas, aprofundei-me em Laravel e seu
+                  ecossistema, Vue.js, WebSockets, Swoole, filas e gestão de
+                  servidores. Durante essa jornada, também adquiri experiência
+                  em gestão de pessoas, processos operacionais, suporte ao
+                  cliente, marketing e vendas. Após essa intensa trajetória
+                  empreendedora, tomei outra grande decisão: deixar a empresa
+                  que ajudei a construir para explorar novas oportunidades
+                  profissionais.
                 </p>
 
                 <p>
-                  <span class="font-medium">Posso te ajudar?</span>
-                  Entre em contato e vamos conversar 😄🔥🚀
+                  <span class="font-medium">
+                    Posso te ajudar no seu projeto?
+                  </span>
+
+                  Entre em contato e vamos conversar! 😄🔥🚀
                 </p>
               </div>
             </section>

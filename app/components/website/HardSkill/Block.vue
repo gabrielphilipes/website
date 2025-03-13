@@ -144,13 +144,10 @@ const toolsSkills: WebsiteHardSkillType[] = [
       <h3 class="font-medium font-serif">Ferramentas Gerais</h3>
 
       <div class="flex flex-wrap space-x-4 text-sm text-zinc-500">
-        <span
-          v-for="skill in toolsSkills"
-          :key="skill.id"
-          class="flex items-center gap-2"
-        >
+        <span v-for="skill in toolsSkills" :key="skill.id">
           • {{ skill.name }}
         </span>
+        <span>• E muito outros...</span>
       </div>
     </article>
   </div>
