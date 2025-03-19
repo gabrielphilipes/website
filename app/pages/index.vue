@@ -250,15 +250,3 @@ watch(colorMode, () => {
     </main>
   </div>
 </template>
-
-<style scoped>
-@reference "../assets/css/general.css";
-
-.section-title {
-  @apply text-xl font-medium font-serif block mb-4 dark:text-white;
-}
-
-.divider {
-  @apply w-full pt-10 mt-10 border-t border-zinc-200 dark:border-zinc-700;
-}
-</style>

@@ -4,8 +4,17 @@
 @import "tailwindcss/preflight" layer(base);
 @import "tailwindcss/utilities" layer(utilities);
 
-/* Then import "@nuxt/ui": */
 @import "@nuxt/ui";
+
+@layer components {
+  .section-title {
+    @apply text-xl font-medium font-serif block mb-4 dark:text-white;
+  }
+
+  .divider {
+    @apply w-full pt-10 mt-10 border-t border-zinc-200 dark:border-zinc-700;
+  }
+}
 
 body {
   @apply font-sans;

@@ -13,12 +13,12 @@
   },
   "dependencies": {
     "@nuxt/icon": "1.10.3",
+    "@nuxt/ui": "^3.0.0",
     "@nuxthub/core": "^0.8.18",
     "@nuxtjs/google-fonts": "3.2.0",
-    "nuxt": "^3.16.0",
+    "nuxt": "^3.16.1",
     "vue": "latest",
-    "vue-router": "latest",
-    "@nuxt/ui": "3.0.0-alpha.13"
+    "vue-router": "latest"
   },
   "devDependencies": {
     "prettier": "^3.5.3"
