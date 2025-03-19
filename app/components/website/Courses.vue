@@ -58,8 +58,8 @@ const courses: WebsiteCourseType[] = [
         "
         :class="[
           'ph_transition !size-4',
-          { 'group-hover:text-green-500': course.status === 'finished' },
-          { 'group-hover:text-yellow-500': course.status === 'in-progress' },
+          { 'text-green-500': course.status === 'finished' },
+          { 'text-yellow-500': course.status === 'in-progress' },
         ]"
       />
 

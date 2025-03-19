@@ -100,7 +100,7 @@ const toolsSkills: WebsiteHardSkillType[] = [
 </script>
 
 <template>
-  <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+  <div class="grid grid-cols-1 gap-x-20 2xl:gap-x-28 gap-y-10 md:grid-cols-2">
     <article class="flex flex-col gap-2">
       <h3 class="font-medium font-serif">Back-end</h3>
 
