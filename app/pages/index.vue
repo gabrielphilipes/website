@@ -48,7 +48,7 @@ defineOgImageComponent("SimpleBlog");
       <div class="flex flex-col mt-10 md:my-10">
         <article class="flex flex-col mb-10 justify-center items-center">
           <img
-            src="/images/gabrielphilipes.jpg"
+            src="/images/gabrielphilipes.webp"
             alt="Gabriel Philipe Silva"
             class="size-40 md:size-56 rounded-full mx-auto md:mx-0"
           />
