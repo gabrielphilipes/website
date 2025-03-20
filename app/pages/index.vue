@@ -1,26 +1,4 @@
 <script setup lang="ts">
-import Chatmix from "~/components/website/Portfolio/Chatmix.vue";
-import type { WebsiteProjectType } from "~/types/website";
-
-const projects = [
-  {
-    id: 1,
-    title: "Titulo",
-    description: "Descrição",
-    component: Chatmix,
-    image: "https://placehold.co/600x400",
-    views: 100,
-  },
-  {
-    id: 2,
-    title: "Titulo",
-    description: "Descrição",
-    component: Chatmix,
-    image: "https://placehold.co/600x400",
-    views: 100,
-  },
-];
-
 const contacts = [
   {
     name: "E-mail",
@@ -44,29 +22,22 @@ const contacts = [
   },
 ];
 
-const sonAge = (): number => {
-  const sonBirthday = new Date("2022-05-08");
-  const today = new Date();
-
-  const diffInMilliseconds = today.getTime() - sonBirthday.getTime();
-
-  const diffInDays = diffInMilliseconds / (1000 * 60 * 60 * 24);
-  return Math.floor(diffInDays / 365);
-};
-
-const modal = ref<boolean>(false);
-const selectedProject = ref<WebsiteProjectType | null>(null);
-const openModal = (project: WebsiteProjectType) => {
-  modal.value = true;
-  selectedProject.value = project;
-};
-
 // Dark mode
 const colorMode = useColorMode();
 const isDark = ref<boolean>(colorMode.preference === "dark");
 watch(colorMode, () => {
   isDark.value = colorMode.preference === "dark";
 });
+
+const title = "Olá 👋🏻";
+const description = "Empreendedor, Tech Lead e Desenvolvedor Full Stack";
+
+useSeoMeta({
+  title,
+  description,
+});
+
+defineOgImageComponent("SimpleBlog");
 </script>
 
 <template>
@@ -179,46 +150,6 @@ watch(colorMode, () => {
                 </article>
               </div>
             </section>
-
-            <template v-if="false">
-              <span class="divider" />
-
-              <section>
-                <h1 class="section-title">Portfólio</h1>
-
-                <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <WebsiteProjectCard
-                    v-for="project in projects"
-                    @click="openModal(project)"
-                    :key="project.id"
-                    :title="project.title"
-                    :description="project.description"
-                    :image="project.image"
-                    :views="project.views"
-                  />
-                </div>
-
-                <UModal
-                  :ui="{ content: '!w-full !max-w-screen-lg' }"
-                  v-model:open="modal"
-                  :title="selectedProject?.title"
-                >
-                  <template #body>
-                    <WebsiteModalLayout>
-                      <component
-                        :is="selectedProject?.component"
-                        :project="selectedProject"
-                      />
-                    </WebsiteModalLayout>
-                  </template>
-                </UModal>
-
-                <span class="text-xs text-zinc-400 italic block mt-5">
-                  * Existem, ainda, projetos que não podem ser divulgados por
-                  força de contrato.
-                </span>
-              </section>
-            </template>
           </div>
         </div>
 

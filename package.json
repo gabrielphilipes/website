@@ -16,6 +16,7 @@
     "@nuxt/ui": "^3.0.0",
     "@nuxthub/core": "^0.8.18",
     "@nuxtjs/google-fonts": "3.2.0",
+    "@nuxtjs/seo": "^3.0.1",
     "nuxt": "^3.16.1",
     "vue": "latest",
     "vue-router": "latest"
