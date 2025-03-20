@@ -6,14 +6,9 @@
 
 @import "@nuxt/ui";
 
-@layer components {
-  .section-title {
-    @apply text-xl font-medium font-serif block mb-4 dark:text-white;
-  }
-
-  .divider {
-    @apply w-full pt-10 mt-10 border-t border-zinc-200 dark:border-zinc-700;
-  }
+@theme {
+  --font-serif: "Newsreader", serif;
+  --font-sans: "Nunito Sans", sans-serif;
 }
 
 body {

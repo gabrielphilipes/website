@@ -22,19 +22,9 @@ const contacts = [
   },
 ];
 
-// Dark mode
-const colorMode = useColorMode();
-const isDark = ref<boolean>(colorMode.preference === "dark");
-watch(colorMode, () => {
-  isDark.value = colorMode.preference === "dark";
-});
-
-const title = "Olá 👋🏻";
-const description = "Empreendedor, Tech Lead e Desenvolvedor Full Stack";
-
 useSeoMeta({
-  title,
-  description,
+  title: "Olá 👋🏻",
+  description: "Empreendedor, Tech Lead e Desenvolvedor Full Stack",
 });
 
 defineOgImageComponent("SimpleBlog");
@@ -153,31 +143,22 @@ defineOgImageComponent("SimpleBlog");
           </div>
         </div>
 
-        <footer
-          class="flex flex-col gap-2 md:flex-row md:gap-0 justify-between items-center text-xs text-zinc-400 pr-5 xl:pr-0 my-10"
-        >
-          <div class="flex flex-col gap-2 mb-10 md:mb-0">
-            <p>
-              &copy; {{ new Date().getFullYear() }} Gabriel Philipe Silva. Todos
-              os direitos reservados.
-            </p>
-          </div>
-
-          <USwitch
-            unchecked-icon="i-lucide-moon"
-            checked-icon="i-lucide-sun"
-            v-model="isDark"
-            :label="isDark ? 'Modo escuro' : 'Modo claro'"
-            size="sm"
-            @update:model-value="
-              colorMode.preference = isDark ? 'dark' : 'light'
-            "
-            :ui="{
-              label: 'text-xs text-zinc-400 cursor-pointer',
-            }"
-          />
+        <footer class="px-10 lg:px-0 my-10">
+          <WebsiteFooterContent />
         </footer>
       </div>
     </main>
   </div>
 </template>
+
+<style scoped>
+@reference "~/assets/css/tailwind.css";
+
+.section-title {
+  @apply text-2xl font-medium font-serif block mb-4 dark:text-white;
+}
+
+.divider {
+  @apply w-full pt-10 mt-10 border-t border-zinc-200 dark:border-zinc-700;
+}
+</style>
